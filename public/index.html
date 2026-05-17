@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gopherly - Go packages that put developers first</title>
+    <meta
+      name="description"
+      content="Gopherly is a collection of production-grade Go packages built with a developer-first manifesto."
+    />
+    <meta property="og:title" content="Gopherly" />
+    <meta
+      property="og:description"
+      content="Go packages that put developers first."
+    />
+    <meta property="og:url" content="https://gopherly.dev" />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://gopherly.dev" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #09090b;
+        --surface: #111216;
+        --text: #f5f7fa;
+        --muted: #a0a6b0;
+        --accent: #48d1cc;
+        --border: #21242c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      .container {
+        width: min(1040px, calc(100% - 2rem));
+        margin: 0 auto;
+      }
+
+      a {
+        color: var(--text);
+        text-underline-offset: 0.2rem;
+      }
+
+      .hero {
+        display: grid;
+        align-content: center;
+        gap: 1rem;
+        padding: 5rem 0 3rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.2rem, 6vw, 4.4rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+      }
+
+      .subtitle {
+        max-width: 680px;
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 2.2vw, 1.25rem);
+      }
+
+      .cta {
+        margin-top: 0.5rem;
+      }
+
+      .button {
+        display: inline-block;
+        border: 1px solid var(--border);
+        border-radius: 0.7rem;
+        padding: 0.65rem 0.95rem;
+        text-decoration: none;
+        background: var(--surface);
+      }
+
+      .button:hover {
+        border-color: var(--accent);
+      }
+
+      .section {
+        padding: 1.2rem 0 3rem;
+      }
+
+      h2 {
+        margin: 0 0 1rem;
+        font-size: 1.6rem;
+      }
+
+      .cards {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+
+      .card {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        border-radius: 0.85rem;
+        padding: 1rem;
+      }
+
+      .card h3 {
+        margin: 0 0 0.65rem;
+        font-size: 1.1rem;
+      }
+
+      .card h3 a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .card h3 a:hover {
+        text-decoration: underline;
+      }
+
+      .card p {
+        margin: 0 0 0.95rem;
+        color: var(--muted);
+      }
+
+      .install {
+        display: flex;
+        gap: 0.6rem;
+        align-items: center;
+      }
+
+      code {
+        display: inline-block;
+        border: 1px solid var(--border);
+        border-radius: 0.6rem;
+        background: #0d0f14;
+        padding: 0.42rem 0.55rem;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+        font-size: 0.89rem;
+      }
+
+      .copy-btn {
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--muted);
+        border-radius: 0.5rem;
+        padding: 0.36rem 0.52rem;
+        cursor: pointer;
+      }
+
+      .copy-btn:hover {
+        color: var(--text);
+        border-color: var(--accent);
+      }
+
+      .principles {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.2rem;
+        display: grid;
+        gap: 0.7rem;
+      }
+
+      .principles li {
+        padding-left: 1.4rem;
+        position: relative;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .principles li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+      }
+
+      .principles strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .manifesto-link {
+        margin: 0;
+      }
+
+      .manifesto-link a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .manifesto-link a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 1.1rem 0 2rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .footer-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.6rem;
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Gopherly",
+        "url": "https://gopherly.dev",
+        "sameAs": ["https://github.com/gopherly"]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="hero container">
+      <h1>Gopherly</h1>
+      <p class="subtitle">Go packages where DX comes first.</p>
+      <p class="cta">
+        <a class="button" href="https://github.com/gopherly">Browse on GitHub</a>
+      </p>
+    </header>
+
+    <main class="container">
+      <section class="section" aria-labelledby="packages-heading">
+        <h2 id="packages-heading">Packages</h2>
+        <div class="cards">
+          <article class="card">
+            <h3><a href="https://github.com/gopherly/synthra">synthra</a></h3>
+            <p>From many sources, one config.</p>
+            <div class="install">
+              <code id="install-synthra">go get gopherly.dev/synthra</code>
+              <button class="copy-btn" type="button" data-copy="install-synthra">
+                Copy
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="principles-heading">
+        <h2 id="principles-heading">The Manifesto</h2>
+        <ul class="principles">
+          <li><strong>Developer experience first</strong> — the first five minutes produce working code.</li>
+          <li><strong>Progressive disclosure</strong> — easy things stay easy, advanced things are possible.</li>
+          <li><strong>The type system is a guide</strong> — autocomplete-driven discovery, misuse is a build error.</li>
+          <li><strong>Errors and visibility are values</strong> — never panicked, never swallowed.</li>
+          <li><strong>Conventions over invention</strong> — stdlib shapes, RFCs, and OTel, not package-specific dialects.</li>
+        </ul>
+        <p class="manifesto-link"><a href="https://github.com/gopherly/manifesto">Read the full manifesto</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-row">
+        <a href="https://github.com/gopherly">GitHub</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://github.com/gopherly/www/blob/main/LICENSE">CC BY 4.0</a>
+      </div>
+    </footer>
+
+    <script>
+      for (const button of document.querySelectorAll(".copy-btn")) {
+        button.addEventListener("click", async () => {
+          const id = button.getAttribute("data-copy");
+          const code = id ? document.getElementById(id) : null;
+          if (!code) return;
+          try {
+            await navigator.clipboard.writeText(code.textContent || "");
+            const oldText = button.textContent;
+            button.textContent = "Copied";
+            setTimeout(() => {
+              button.textContent = oldText;
+            }, 1200);
+          } catch {
+            button.textContent = "Failed";
+            setTimeout(() => {
+              button.textContent = "Copy";
+            }, 1200);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
